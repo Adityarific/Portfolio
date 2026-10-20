@@ -1,0 +1,119 @@
+
+.fluid-cursor {
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 10000;
+  width: 22px;
+  height: 22px;
+  border: 1px solid rgba(255, 255, 255, 0.85);
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.06);
+  backdrop-filter: blur(3px);
+  -webkit-backdrop-filter: blur(3px);
+  pointer-events: none;
+  display: grid;
+  place-items: center;
+  opacity: 0;
+  will-change: transform;
+  transition:
+    width 0.35s ease,
+    height 0.35s ease,
+    background 0.3s ease,
+    border-color 0.3s ease,
+    opacity 0.2s ease;
+}
+
+.fluid-cursor.is-visible {
+  opacity: 1;
+}
+
+.fluid-cursor-dot {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 4px;
+  height: 4px;
+  border-radius: 50%;
+  background: #fff;
+  transform: translate(-50%, -50%);
+  will-change: transform;
+}
+
+.fluid-cursor-label {
+  display: grid;
+  place-items: center;
+  width: 100%;
+  height: 100%;
+}
+
+.fluid-cursor-label span {
+  font-size: 7px;
+  font-weight: 600;
+  letter-spacing: 0.7px;
+  color: #050505;
+  white-space: nowrap;
+}
+
+.fluid-cursor.is-hovering {
+  width: 84px;
+  height: 84px;
+  background: rgba(245, 245, 245, 0.94);
+  border-color: #fff;
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  box-shadow:
+    0 0 25px rgba(255, 255, 255, 0.07),
+    inset 0 0 18px rgba(255, 255, 255, 0.12);
+}
+
+.fluid-cursor:not(.is-hovering) .fluid-cursor-label span {
+  opacity: 0;
+}
+
+.fluid-cursor.is-hovering .fluid-cursor-dot {
+  opacity: 0;
+}
+
+body:has(.fluid-cursor) {
+  cursor: none;
+}
+
+body:has(.fluid-cursor) a,
+body:has(.fluid-cursor) button {
+  cursor: none;
+}
+
+[data-magnetic] {
+  --magnetic-x: 0px;
+  --magnetic-y: 0px;
+
+  transform: translate3d(
+    var(--magnetic-x),
+    var(--magnetic-y),
+    0
+  );
+
+  transition: transform 0.3s cubic-bezier(0.2, 0.8, 0.2, 1);
+}
+
+[data-magnetic].is-magnetic {
+  transition-duration: 0.08s;
+}
+
+@media (pointer: coarse), (prefers-reduced-motion: reduce) {
+  .fluid-cursor {
+    display: none;
+  }
+
+  body:has(.fluid-cursor),
+  body:has(.fluid-cursor) a,
+  body:has(.fluid-cursor) button {
+    cursor: auto;
+  }
+
+  [data-magnetic] {
+    transform: none;
+    transition: none;
+  }
+}

@@ -1,0 +1,154 @@
+
+.contact-section {
+  padding: 100px 0 28px;
+  border-top: 1px solid #292929;
+  overflow: hidden;
+}
+
+.contact-topline {
+  display: flex;
+  justify-content: space-between;
+  gap: 20px;
+  color: #858585;
+  font-size: 9px;
+  letter-spacing: 1.5px;
+}
+
+.contact-heading {
+  padding: 110px 0 65px;
+}
+
+.contact-heading > p {
+  margin: 0 0 35px;
+  color: #858585;
+  font-size: 10px;
+  letter-spacing: 2px;
+}
+
+.contact-heading h2 {
+  margin: 0;
+  font-size: clamp(48px, 10vw, 145px);
+  line-height: 0.88;
+  letter-spacing: -0.09em;
+  font-weight: 600;
+}
+
+.contact-heading h2 > span:first-of-type {
+  color: transparent;
+  -webkit-text-stroke: 1px #777;
+}
+
+.contact-dot {
+  color: #777;
+}
+
+.contact-cta {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 28px 0;
+  border-top: 1px solid #444;
+  border-bottom: 1px solid #444;
+  color: #f5f5f5;
+  font-size: clamp(30px, 5vw, 65px);
+  letter-spacing: -0.06em;
+  transition: color 0.3s ease;
+}
+
+.contact-cta:hover {
+  color: #999;
+}
+
+.contact-arrow {
+  transition: transform 0.3s ease;
+}
+
+.contact-cta:hover .contact-arrow {
+  transform: translate(8px, -8px);
+}
+
+.contact-email {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 20px;
+  padding: 35px 0 80px;
+}
+
+.contact-email > span {
+  color: #777;
+  font-size: 9px;
+  letter-spacing: 1.5px;
+}
+
+.contact-email a {
+  color: #d0d0d0;
+  font-size: 13px;
+}
+
+.contact-footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 24px;
+  padding-top: 25px;
+  border-top: 1px solid #292929;
+  color: #777;
+  font-size: 9px;
+  letter-spacing: 1px;
+}
+
+.contact-socials {
+  display: flex;
+  gap: 24px;
+}
+
+.contact-footer a {
+  color: #bcbcbc;
+  transition: color 0.25s ease;
+}
+
+.contact-footer a:hover,
+.contact-email a:hover {
+  color: #fff;
+}
+
+@media (max-width: 700px) {
+  .contact-section {
+    padding-top: 70px;
+  }
+
+  .contact-topline {
+    font-size: 8px;
+  }
+
+  .contact-topline span:last-child {
+    max-width: 48%;
+    text-align: right;
+  }
+
+  .contact-heading {
+    padding: 80px 0 50px;
+  }
+
+  .contact-heading h2 {
+    font-size: 12vw;
+  }
+
+  .contact-email {
+    align-items: flex-start;
+    flex-direction: column;
+    padding-bottom: 55px;
+  }
+
+  .contact-email a {
+    font-size: 12px;
+    overflow-wrap: anywhere;
+  }
+
+  .contact-footer {
+    align-items: flex-start;
+    flex-direction: column;
+    gap: 22px;
+  }
+}

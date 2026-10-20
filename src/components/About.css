@@ -1,0 +1,141 @@
+
+.about-section {
+  padding: 110px 0 55px;
+  border-top: 1px solid #292929;
+  overflow: hidden;
+}
+
+.about-topline,
+.about-bottomline {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 20px;
+  color: #858585;
+  font-size: 9px;
+  letter-spacing: 1.5px;
+}
+
+.about-headline {
+  padding: 95px 0 100px;
+}
+
+.about-headline h2 {
+  margin: 0;
+  font-size: clamp(54px, 10.5vw, 155px);
+  font-weight: 600;
+  line-height: 0.83;
+  letter-spacing: -0.095em;
+}
+
+.about-outline {
+  color: transparent;
+  -webkit-text-stroke: 1px #777;
+}
+
+.about-dot {
+  color: #777;
+}
+
+.about-content {
+  display: grid;
+  grid-template-columns: 1fr 1.1fr;
+  gap: 50px;
+  padding: 45px 0 70px;
+  border-top: 1px solid #292929;
+}
+
+.about-side-label {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  color: #777;
+  font-size: 9px;
+  letter-spacing: 1.5px;
+}
+
+.about-description {
+  max-width: 580px;
+}
+
+.about-description p {
+  color: #929292;
+  font-size: 13px;
+  line-height: 1.95;
+  margin: 0 0 24px;
+}
+
+.about-description .about-lead {
+  color: #ededed;
+  font-size: clamp(19px, 2.3vw, 28px);
+  line-height: 1.5;
+  letter-spacing: -0.045em;
+}
+
+.about-interests {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 9px;
+  margin-top: 32px;
+}
+
+.about-interests span {
+  border: 1px solid #363636;
+  border-radius: 999px;
+  padding: 10px 12px;
+  color: #bcbcbc;
+  font-size: 9px;
+  letter-spacing: 0.7px;
+}
+
+.about-bottomline {
+  border-top: 1px solid #292929;
+  padding-top: 25px;
+}
+
+.about-bottomline a {
+  color: #f5f5f5;
+  transition: color 0.25s ease;
+}
+
+.about-bottomline a:hover {
+  color: #999;
+}
+
+@media (max-width: 700px) {
+  .about-section {
+    padding-top: 70px;
+  }
+
+  .about-topline,
+  .about-bottomline {
+    font-size: 8px;
+  }
+
+  .about-topline span:last-child {
+    max-width: 45%;
+    text-align: right;
+  }
+
+  .about-headline {
+    padding: 70px 0;
+  }
+
+  .about-headline h2 {
+    font-size: 12vw;
+  }
+
+  .about-content {
+    grid-template-columns: 1fr;
+    gap: 35px;
+    padding: 35px 0 50px;
+  }
+
+  .about-description p {
+    font-size: 12px;
+  }
+
+  .about-description .about-lead {
+    font-size: 23px;
+  }
+}
